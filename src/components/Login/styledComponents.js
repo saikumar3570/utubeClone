@@ -41,7 +41,7 @@ export const Input = styled.input`
 `
 export const Button = styled.button`
   background-color: #3b82f6;
-  color: white;
+  color: #ffffff;
   text-align: center;
   border: transparent;
   margin-top: 5px;

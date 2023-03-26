@@ -1,7 +1,7 @@
 import {IoMdMoon} from 'react-icons/io'
 import {BsFillBrightnessHighFill} from 'react-icons/bs'
 import Popup from 'reactjs-popup'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import ThemeContext from '../../context/context'
 import {
@@ -28,24 +28,28 @@ const Header = props => (
       const Logout = () => {
         Cookies.remove('jwt_token')
         const {history} = props
-        history.replace('./login')
+        history.replace('/login')
       }
 
       return (
         <MainContainer light={lightMode} data-testid="home">
           {lightMode && (
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
-              alt="website logo"
-              className="logoImage"
-            />
+            <Link to="/">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+                alt="website logo"
+                className="logoImage"
+              />
+            </Link>
           )}
           {!lightMode && (
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png"
-              alt="website logo"
-              className="logoImage"
-            />
+            <Link to="/">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png"
+                alt="website logo"
+                className="logoImage"
+              />
+            </Link>
           )}
           <LocalContainer>
             <button
